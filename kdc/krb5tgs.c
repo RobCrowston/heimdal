@@ -1966,7 +1966,8 @@ server_lookup:
 
 	    if (client->entry.flags.trusted_for_delegation &&
 		s4u2self_impersonated_client->entry.flags.forwardable) {
-		str = "[forwardable]";
+		    b->kdc_options.proxy = 1;
+		    str = "[forwardable]";
 	    } else {
 		b->kdc_options.forwardable = 0;
 		str = "";
